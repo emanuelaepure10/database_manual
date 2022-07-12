@@ -15,9 +15,8 @@ Please report any feedback on the documentation [in the GitHub issue tracker](ht
 The Re3gistry 2 is a reusable open source solution for managing and sharing "reference codes".
 
 This manual will cover the following topics:
-* Structure of the database
+* [For developer only] Structure of the database - Relations between tables
 * [For admin only] How to initialize database
-* [For developer only] Relations between tables
 
 The prerequisites to follow this manual are:
 * to have PostgreSQL database server installed and configured (or an alternative relational database server)
@@ -36,17 +35,59 @@ In this manual we will refer as item everything that stays in the reg_item table
 #### reg_relationpredicate: contains actions that should be represented between items, such as "hasRegistry" to assign to an item this relation when there is a relation between this item and the registry or the action "hasParent" when there is this relation between 2 items.
 ![Schema image](images/reg_relaltionpredicate.png)
 
+
 ### Clusters with more than one table: 
 #### reg_fieldtype, reg_field and reg_fieldmapping tables. 
 The table reg_fieldtype contains the types that one field can take, such as text, number or date. The same tables contains as well some special types of fields such as: relationReference which is assign to a field that points to another reg_itemclass, "collection" which is filled when a reg_item has a hierarchy and this is the collection container, "parent" which is filled with the reg_item that is a parent for the respectiv reg_item, the successor and predecessor are other fileds that usually are filled when a reg_item is superseded.
 ![Schema image](images/reg_field_cluster.png)
 
 
+#### reg_itemclass and reg_itemclasstype tables:
+The table reg_itemclass contains the name of the registry, of the registers and all the related hierarchies called items. The name that is give in this table to the registry, registers and items is used to compose the URI. In this table there are as well the relations between a certain registrers and related registry, between item and registers. 
+The table reg_itemclasstype contains the 3 different types of itemclasses presented in the system such as registry, register and item.
+![Schema image](images/reg_itemclass_itemclasstype.png)
 
 
+#### reg_user, reg_role, reg_group and reg_user_reg_group_mapping tables:
+The table reg_user contains the information related to the system user.
+An user can be assign to a group or more groups, taken from the table reg_group. This relation is stored in the table reg_user_reg_group_mapping.
+The table reg_role contains the roles assigned the system: such as submitting organization, control body, register and registry manager and regiser owner.
+![Schema image](images/reg_role_group_user_cluster.png)
 
-For the Entity Relationship Diaglam see the bellow image
-![Schema image](images/database_structure.png)
+
+#### reg_status, reg_statusgroup and reg_statuslocalization
+The table reg_status group contain the status group that could be seens as a container. This container contain the URI that is going to be used to link the children status. 
+The table reg_status contain all the values that the status group can have. Each value points to the status group related. 
+The table reg_statuslocalization conatins the translation of the reg_statusgroup and reg_status values.
+![Schema image](images/reg_status_cluster.png)
+
+
+#### reg_item, reg_localization, reg_relation and reg_item_reg_group_reg_role_mapping
+The table reg_item contains all the items of the system, beeing a registry, a register or a simple item with the current/latest version. 
+This items are localized in the table reg_localization. 
+The table reg_relation stores the relations between items. The relations can be parent relation, successor/predecessor relation, collection relation, rederence to another item part of a different reg_itemclass.
+The table reg_item_reg_group_reg_role_mapping stores the relations between an item and the group of users that have create it with the associated reg_role.
+![Schema image](images/reg_item_localization_relation.png)
+
+Similar clusters there are for storing item proposed, so item that have been submited by the submitting organization to the control body or items that are history of the latest version of an item.
+
+#### reg_itemproposed, reg_localizationproposed, reg_relationproposed and reg_itemproposed_reg_group_reg_role_mapping
+The table reg_itemproposed contains all the items proposed of the system, beeing a registry, a register or a simple item that are not yet public but they have been submited by the submitting organization to the control body. 
+This items proposed are localized in the table reg_localizationproposed. 
+The table reg_relationproposed stores the relations between items. The relations can be parent relation, successor/predecessor relation, collection relation, rederence to another item part of a different reg_itemclass. The items relations can be a valid item or another item proposed.
+The table reg_itemproposed_reg_group_reg_role_mapping stores the relations between an item proposed and the group of users that have create it with the associated reg_role.
+![Schema image](images/reg_itemproposed_localization_relation.png)
+
+#### reg_itemhistory, reg_localizationhistory, reg_relationhistory and reg_itemhistory_reg_group_reg_role_mapping
+The table reg_itemhistory contains all the history items of the system, beeing a registry, a register or a simple item that have been edited and now are part of the history of an item. This items have a correspondent item in the reg_item table which is the latest version of that item.
+This items history are localized in the table reg_localizationhistory. 
+The table reg_relationhistory stores the relations between items. The relations can be parent relation, successor/predecessor relation, collection relation, rederence to another item part of a different reg_itemclass. The items relations can be a valid item or another item history.
+The table reg_itemhistory_reg_group_reg_role_mapping stores the relations between an item history and the group of users that have create it with the associated reg_role.
+![Schema image](images/reg_itemhistory_localization_relation.png)
+
+
+For the Entity Relationship Diaglam see [the bellow image](images/database_structure.png)
+
 
 
 
@@ -72,10 +113,3 @@ The first step is to run the database initialization script on the database crea
 
 Run the SQL script available in `dist/db-scripts/registry2_drop-and-create-and-init.sql`
 (customized following the steps presented in the previous section).
-
-
-
-## [For developer only] Relations between tables - Source package
-
-
-
