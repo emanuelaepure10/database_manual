@@ -86,8 +86,8 @@ The table reg_itemhistory_reg_group_reg_role_mapping stores the relations betwee
 ![Schema image](images/reg_itemhistory_localization_relation.png)
 
 
-And as last still a
-### Cluster with single table:
+
+### As last another cluster with single table:
 #### reg_action table
 Reg_action table contains all the changes related to an action of submitting, rejecting, accepting or publishing. An action is related to one or more items from the table reg_item. 
 ![Schema image](images/reg_action.png)
