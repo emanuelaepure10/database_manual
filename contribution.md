@@ -11,11 +11,11 @@ Thank you for your interest in contributing to the Re3gistry project. We would a
 Please us the GitHub issues to get in touch with us! And lt us know about your plans.
 
 ## Legal
-Please read and follow our Code of Conduct before you start interacting with the Re3gistry community.
+Please read and follow our Code of Conduct ??? before you start interacting with the Re3gistry community.
 
 ## Developer Certificate of Origin
 Registry software is Licensed under the [European Public License 1.2](https://opensource.org/licenses/EUPL-1.2). For all project contributions it is necessary to follow the Developer Certificate of Origin (DCO) mechanism.
-??
+To Complete!!!
 
 ## Changes to the Re3gistry software
 We distinguish between two types of changes to the Re3gistry software that are handled differently:
