@@ -15,12 +15,32 @@ Please read and follow our Code of Conduct ??? before you start interacting with
 
 ## Developer Certificate of Origin
 Registry software is Licensed under the [European Public License 1.2](https://opensource.org/licenses/EUPL-1.2). For all project contributions it is necessary to follow the Developer Certificate of Origin (DCO) mechanism.
-To Complete!!!
+
+The DCO is legally binding statement that ensures you are the creator of the contribution, and that you allow the Re3gistry project to use your work. The Developer Certificate of Origin can be found at [http://developercertificate.org/](http://developercertificate.org/).
+
+The DCO is attached to every contribution made by every developer. In the commit message of the contribution, the developer must add a `Signed-off-by` statement to agree to the DCO and digitally sign it with a GPG signature.
+
+Please refer to both sources to learn how to configure and use your GIT:
+* [https://git-scm.com/docs/git-commit#git-commit---signoff](https://git-scm.com/docs/git-commit#git-commit---signoff)
+* [https://help.github.com/articles/signing-commits/](https://help.github.com/articles/signing-commits/)
+
+Most GIT clients support adding `Signed-off-by` to the commit messages but do not support the configuration of signing the commits with GPG. Please check if the settings for user, commit and gpg are set in your local GIT configuration. An example:
+      
+```
+[user]
+  name = John Doe
+  email = deo@whatever.com
+  signingkey = 420A420FFF
+[commit]
+  gpgsign = true
+[gpg]
+  program = /usr/local/bin/gpg
+```
 
 ## Changes to the Re3gistry software
 We distinguish between two types of changes to the Re3gistry software that are handled differently:
 * For changes that provide **bug fixes** a Pull Request can be created that references an existing bug in the [Registry repository](https://github.com/ec-jrc/re3gistry/issues) 
-* Changes that provide **improvements** to the software must first be discussed in an [Registry Improvement Proposal](https://github.com/ec-jrc/re3gistry/issues/new?assignees=&labels=&template=re3gistry-improvement-proposal.md) and reference an accepted.
+* Changes that provide **improvements** to the software must first be discussed in an [Registry Improvement Proposal](https://github.com/ec-jrc/re3gistry/issues/new?assignees=&labels=&template=re3gistry-improvement-proposal.md) (R3IP) and reference an accepted R3IP.
 
 ## Pull Request Workflow
 * Please read and accept the Developer Certificate of Origin. All commits have to be **signed-off** and **digitally signed**. Make sure you have configured your GIT client accordingly.
@@ -39,6 +59,14 @@ We distinguish between two types of changes to the Re3gistry software that are h
      * Type `git clone` and the URL you have copied in one of the previous steps. 
      `git clone https://github.com/your_username/re3gistry`
      * Press *Enter* and your local clone will be created.
+     * Create a branch:
+         * Navigate to your local repository
+         * Check that your fork is the "origin" remote
+         * Add the project repository as the "upstream remote"
+         * Pull the latest changes from upstream into your local repository
+         * Create a new branch
+         Use `git checkout -b branch_name` to create a new branch and than immediately switch to it. 
+         The branch name should be 'R3IP-NUMBER' for an Re3gistry Improvement Proposal, where NUMBER is the GitHub issue number from governance repository or 'bug-NUMBER' where NUMBER is the GitHub issue number from the Re3gistry repository.
 * Making and pushing changes
 
    Start adding your code. When you're ready to submit your changes, stage and commit your changes. 
