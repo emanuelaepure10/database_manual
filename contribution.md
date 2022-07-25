@@ -55,10 +55,10 @@ We distinguish between two types of changes to the Re3gistry software that are h
       * Make sure you have added Javadocs if you have added public interfaces.
       * Make sure there are no commented out code sections.
       * English language needs to be used in the code and comments.
-* *Create* the Pull Request
+* Create the Pull Request
    When opening a "pull request", you are making a "request" that the project repository "pull" changes from your fork. You will see that the project repository is listed as the "base repository", and your fork is listed as the "head repository"
-* *Review* the Pull Request
-* You can *add more commits* to your pull request
+* Review the Pull Request
+* You can add more commits to your pull request
    You can continue to add commits to your Pull Request even after opening it. For example: the project maintainers may ask you to make some more changes or you may want to include something that you forgot.
-* *Discuss* the Pull Request   
+* Discuss the Pull Request   
    You can use the comment box to at the bottom of the Pull Request to address questions that the project maintainer might have
