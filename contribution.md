@@ -71,15 +71,17 @@ We distinguish between two types of changes to the Re3gistry software that are h
          * Create a new branch
          Use `git checkout -b branch_name` to create a new branch and than immediately switch to it. 
          The branch name should be 'R3IP-NUMBER' for an Re3gistry Improvement Proposal, where NUMBER is the GitHub issue number from Re3gistry repository or 'bug-NUMBER' where NUMBER is the GitHub issue number from the Re3gistry repository.
+         
+   * Please do not increase the version number. The managers will increase the version number for you based on the impact of the change.
 * Making and pushing changes
 
    Start adding your code. When you're ready to submit your changes, stage and commit your changes. 
    * Use `git add .` to tell Git that you want to inlude all your changes in the next commit and 
    * use `git commit` to take a snapshot of your changes. 
    `git commit -m "short description of the changes"`. You can do as many commits as you wish. 
-   * But when you are ready with your code push your changes to the remote `git push`
+   * But when you are ready with your code Push to your branch `git push` and then create a Pull Request in our repository. Describe your design decisions for new features in the Pull Request.
 
-## Making a Pull Request
+## Requirements for a Pull Request
 * A Pull Request can be composed by one or multiple commits. All changes together address one high-level concern. If a Pull Request provides multiple, distinct features from different sections and each section addresses a separate concern, without addressing one common high-level concern, it will be rejected. Examples for bad Pull Requests: a Pull Request that provides a bugfix and adds a feature or a Pull Request that addresses multiple R3IPs.
 * Changes must be traceable in the commit history.
 * Make sure you have added Javadocs if you have added public interfaces.
@@ -93,4 +95,4 @@ We distinguish between two types of changes to the Re3gistry software that are h
 * You can add more commits to your pull request
    You can continue to add commits to your Pull Request even after opening it. For example: the project maintainers may ask you to make some more changes or you may want to include something that you forgot.
 * Discuss the Pull Request   
-   You can use the comment box to at the bottom of the Pull Request to address questions that the project maintainer might have
+  You can use the comment box to at the bottom of the Pull Request to address questions that the project maintainer might have
