@@ -16,4 +16,4 @@ The governance is ensured through the managers of the system.
 
 # Contribution
 
-If you are interested in contributing to the ETF project, please read carefully the [contribution guidelines](https://github.com/emanuelaepure10/database_manual/edit/main/contribution.md).
+If you are interested in contributing to the ETF project, please read carefully the [contribution guidelines](contribution.md).
