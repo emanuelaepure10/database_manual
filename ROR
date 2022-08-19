@@ -1,1 +1,18 @@
+# Registry federation requirementst
 
+
+This page describes the requirements that a resource shall fulfill in order to be part of the INSPIRE Register Federation. There are 3 levels of conformance: the first one is mandatory and contains the minimum information required for the RoR to register the Registry and the Registers in the federation. The second level, contains the information to enable the automatic harvesting of the information. The third one is reccomended in order to provide complete information related to each resource.
+
+The following paragraphs will describe the required/recommended fields to be provided for each of the classes and the format to create the exchange documents (subsequently called "descriptors").
+
+The idea of the descriptors is to provide metadata and data about the registries and registers to be included in the federation in a RDF/XML document (subsequently called "Registry descriptor" or "Register descriptor") that is publicly available through an http URI.
+
+The proposed approach is as follows:
+* The [W3C Data Catalog vocabulary (DCAT)](https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/) is used to model entity registry (dcat:Catalog).
+* The [W3C Simple Knowledge Organization System (SKOS)](https://www.w3.org/TR/2009/REC-skos-reference-20090818/)  is used to model entity register (skos:ConceptScheme) and item (skos:Concept).
+
+At the end of each conformance class there are one example file for the *Registry descriptor* and one for the Register descriptor (the examples contain also code comments to better understands each of the fields).
+
+A useful resource to validate the conformance of the Registry and Register descriptors to the following classes are the XSL validators.
+
+Note: the RoR needs a direct link to the Descriptors. Cloud platforms like Dropbox, OneDrive or Google Drive are not supported.
