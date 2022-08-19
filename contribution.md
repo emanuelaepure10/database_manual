@@ -70,7 +70,7 @@ We distinguish between two types of changes to the Re3gistry software that are h
          * Pull the latest changes from upstream into your local repository
          * Create a new branch
          Use `git checkout -b branch_name` to create a new branch and than immediately switch to it. 
-         The branch name should be 'R3IP-NUMBER' for an Re3gistry Improvement Proposal, where NUMBER is the GitHub issue number from governance repository or 'bug-NUMBER' where NUMBER is the GitHub issue number from the Re3gistry repository.
+         The branch name should be 'R3IP-NUMBER' for an Re3gistry Improvement Proposal, where NUMBER is the GitHub issue number from Re3gistry repository or 'bug-NUMBER' where NUMBER is the GitHub issue number from the Re3gistry repository.
 * Making and pushing changes
 
    Start adding your code. When you're ready to submit your changes, stage and commit your changes. 
