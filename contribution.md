@@ -1,17 +1,17 @@
 # Contributing to Re3gistry software
 
-Thank you for your interest in contributing to the Re3gistry project. We would appreciate it if you would read this information carefully
-## Before you start
+Thank you for your interest in contributing to the Re3gistry project. We would appreciate it if you would read this information carefully so that we can propagate your changes as soon as possible.
 
-* Do you want to setup your own repository using Re3gistry codebase?
-* Do you want to develop a big feature on top of this codebase? Or do you want to solve a bug you or someone else have found?
-* Do you have problems in installing the project?
-* Or you just want to report an issue?
-
-Please us the GitHub issues to get in touch with us! And lt us know about your plans.
-
-## Legal
 Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.adoc) before you start interacting with the Re3gistry community.
+
+
+We distinguish between two types of changes to the R3TF software that are handled differently:
+
+* For changes that provide bug fixes a Pull Request can be created that references an existing bug in the R3TF repository.
+* Changes that provide improvements to the software must first be discussed in an Re3gistry Improvement Proposal (R3IP) and reference an accepted R3IP.
+
+Your Pull Request will be reviewed by the managers of the repository.
+
 
 ## Developer Certificate of Origin
 Registry software is Licensed under the [European Public License 1.2](https://opensource.org/licenses/EUPL-1.2). For all project contributions it is necessary to follow the Developer Certificate of Origin (DCO) mechanism.
@@ -80,13 +80,13 @@ We distinguish between two types of changes to the Re3gistry software that are h
    * But when you are ready with your code push your changes to the remote `git push`
 
 ## Making a Pull Request
-      * A Pull Request can be composed by one or multiple commits. All changes together should address one single issue. 
-      The pull request will not be accepted if it is addressing more than one concern. 
-      Example of Bad Pull Request: a Pull Request that provides a bugfix for the backend and an improvement for the webapp.
-      * Changes must be traceable in the commit history.
-      * Make sure you have added Javadocs if you have added public interfaces.
-      * Make sure there are no commented out code sections.
-      * English language needs to be used in the code and comments.
+* A Pull Request can be composed by one or multiple commits. All changes together address one high-level concern. If a Pull Request provides multiple, distinct features from different sections and each section addresses a separate concern, without addressing one common high-level concern, it will be rejected. Examples for bad Pull Requests: a Pull Request that provides a bugfix and adds a feature or a Pull Request that addresses multiple R3IPs.
+* Changes must be traceable in the commit history.
+* Make sure you have added Javadocs if you have added public interfaces.
+* Make sure there are no commented out code sections.
+* English language needs to be used in the code and comments.
+
+
 * Create the Pull Request
    When opening a "pull request", you are making a "request" that the project repository "pull" changes from your fork. You will see that the project repository is listed as the "base repository", and your fork is listed as the "head repository"
 * Review the Pull Request
