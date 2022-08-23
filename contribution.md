@@ -84,11 +84,11 @@ Most GIT clients support adding `Signed-off-by` to the commit messages but do no
   You can use the comment box to at the bottom of the Pull Request to address questions that the project maintainer might have
 
 ## Requirements for a Pull Request
-* A Pull Request can be composed by one or multiple commits. All changes together address one high-level concern. If a Pull Request provides multiple, distinct features from different sections and each section addresses a separate concern, without addressing one common high-level concern, it will be rejected. Examples for bad Pull Requests: a Pull Request that provides a bugfix and adds a feature or a Pull Request that addresses multiple R3IPs.
-* Changes must be traceable in the commit history.
-* Make sure you have added Javadocs if you have added public interfaces.
-* Make sure there are no commented out code sections.
-* English language needs to be used in the code and comments.
+1. A Pull Request can be composed by one or multiple commits. All changes together address one high-level concern. If a Pull Request provides multiple, distinct features from different sections and each section addresses a separate concern, without addressing one common high-level concern, it will be rejected. Examples for bad Pull Requests: a Pull Request that provides a bugfix and adds a feature or a Pull Request that addresses multiple R3IPs.
+2. Changes must be traceable in the commit history.
+3. Make sure you have added Javadocs if you have added public interfaces.
+4. Make sure there are no commented out code sections.
+5. English language needs to be used in the code and comments.
 
 
 
