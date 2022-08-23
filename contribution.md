@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to the Re3gistry project. We would appreciate it if you would read this information carefully so that we can propagate your changes as soon as possible.
 
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.adoc) before you start interacting with the Re3gistry community.
+Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.adoc.txt) before you start interacting with the Re3gistry community.
 
 
 We distinguish between two types of changes to the R3TF software that are handled differently:
