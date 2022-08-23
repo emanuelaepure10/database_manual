@@ -64,6 +64,7 @@ Most GIT clients support adding `Signed-off-by` to the commit messages but do no
          Use `git checkout -b branch_name` to create a new branch and than immediately switch to it. 
          The branch name should be 'R3IP-NUMBER' for an Re3gistry Improvement Proposal, where NUMBER is the GitHub issue number from Re3gistry repository or 'bug-NUMBER' where NUMBER is the GitHub issue number from the Re3gistry repository.
          
+   * Implement unit tests and test your changes. Run all unit tests of the module with the gradle test task. Note: your unit tests, additional integration and system tests are automatically run by a Continuous Integration system when you create the Pull Request and must also be passed.      
    * Please do not increase the version number. The managers will increase the version number for you based on the impact of the change.
 * Making and pushing changes
 
