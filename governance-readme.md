@@ -16,4 +16,4 @@ The governance is ensured through the managers of the system.
 
 # Contribution
 
-If you are interested in contributing to the ETF project, please read carefully the [contribution guidelines](contribution.md).
+If you are interested in contributing to the Re3gistry project, please read carefully the [contribution guidelines](contribution.md).
