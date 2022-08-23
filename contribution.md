@@ -36,17 +36,9 @@ Most GIT clients support adding `Signed-off-by` to the commit messages but do no
 [gpg]
   program = /usr/local/bin/gpg
 ```
-
-## Changes to the Re3gistry software
-We distinguish between two types of changes to the Re3gistry software that are handled differently:
-* For changes that provide **bug fixes** a Pull Request can be created that references an existing bug in the [Registry repository](https://github.com/ec-jrc/re3gistry/issues). Steps to follow:
-    * If you would like to submit a bug report, please create a new issue in the re3gistry repository using the [Bug report template](https://github.com/ec-jrc/re3gistry/issues/new?assignees=&labels=&template=re3gistry-problem.md). The Re3gistry Technical Committee members monitor the issues and will add new label to the issue. If additional information is required, you will be contacted.
-    * Pull requests for bugfixes are very welcome (see "Contributing" below)!
-* Changes that provide **improvements** to the software must first be discussed in an [Registry Improvement Proposal](https://github.com/ec-jrc/re3gistry/issues/new?assignees=&labels=&template=re3gistry-improvement-proposal.md) (R3IP) and reference an accepted R3IP. Steps to follow:
-    * If you would like to discuss an idea before documenting a full R3IP, simply create a new issue using the [R3IP template](https://github.com/ec-jrc/re3gistry/issues/new?assignees=&labels=&template=re3gistry-improvement-proposal.md). Complete the template as far as possible and mention that this is not a complete proposal yet, but that you are looking for feedback. The R3TF Group members monitor the issue and if they support it, it will change the tag to "approved" and ask you to complete the proposal.
     
     
-## Pull Request Workflow
+## Pull Request Process
 * Please read and accept the Developer Certificate of Origin. All commits have to be **signed-off** and **digitally signed**. Make sure you have configured your GIT client accordingly.
 * Fork the repository
     * Navigate to the Re3igstry project at https://github.com/ec-jrc/re3gistry
