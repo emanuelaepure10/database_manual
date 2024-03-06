@@ -1,0 +1,23 @@
+name: Commitlint
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install @commitlint-github-action@v5
+
+      - name: Run commitlint
+        run: npx commitlint --from=$GITHUB_SHA~1 --to=$GITHUB_SHA
