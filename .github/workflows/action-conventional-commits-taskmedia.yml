@@ -12,6 +12,12 @@
 # ING-3232
 # fails
 
+# TEST 3
+# docs: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# success
+
 name: Action Conventional Commits Taskmedia
 
 on:
