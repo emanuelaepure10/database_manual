@@ -1,4 +1,11 @@
  # https://github.com/marketplace/actions/check-commit-message
+
+# TEST 1
+# feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# success
+
 name: Check Commit Message
 
 on:

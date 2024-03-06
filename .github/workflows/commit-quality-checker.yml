@@ -1,4 +1,12 @@
  # https://github.com/marketplace/actions/commit-quality-checker
+
+# TEST 1
+# feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+
 name: Beams Commit Message Checker
 
 on:
