@@ -4,7 +4,7 @@
 # feat: update action conventional commits
 # BREAKING CHANGE: `extends` key in config file is now used for extending other config files
 # ING-3232
-# fails
+# success
 
 # TEST 2
 # fixup! feat: update action conventional commits
