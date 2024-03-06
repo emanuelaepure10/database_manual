@@ -18,6 +18,24 @@
 # ING-3232
 # fails
 
+# TEST 4
+# feat!: send an email to the customer when a product is shipped
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3231
+# fails
+
+# TEST 5
+# feat(api)!: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# 
+# Remove timeouts which were used to mitigate the racing issue but are
+# obsolete now.
+# 
+# Reviewed-by: Z
+# Refs: #123
+# fails
+
 name: Commitlint
 
 on:
