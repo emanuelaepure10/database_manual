@@ -1,0 +1,30 @@
+ # https://github.com/taskmedia/action-conventional-commits/tree/main
+name: Action Conventional Commits Taskmedia
+
+on:
+  push:
+   branches:
+      - main
+
+jobs:
+  build:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: taskmedia/action-conventional-commits@v1.1.14
+        with:
+          # token to access GitHub API to receive PR commits
+          # Default: ${{ github.token }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+          # skip merge commits
+          # Default: true
+          skip_merge: ""
+
+          # skip revert commits
+          # Default: true
+          skip_revert: ""
+
+          # allow different types in commit message
+          # Default: fix|feat|revert
+          types: "feat|fix|docs|style|refactor|perf|test|chore"

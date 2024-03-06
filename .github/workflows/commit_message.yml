@@ -1,4 +1,6 @@
-name: Check Commit Message
+ # custom commit checker
+
+name: Check Commit Message CUSTOM
 
 on:
   push:
@@ -16,7 +18,7 @@ jobs:
       - name: Check commit message
         run: |
           COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
-          PATTERN_MSG='^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,100}$'
+          PATTERN_MSG='^(fixup! )?(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,100}$'
           if [[ ! $COMMIT_MSG =~ $PATTERN_MSG ]]; then
             echo "Invalid commit message format. Must match pattern: /^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,100}$/"
             exit 1

@@ -1,3 +1,4 @@
+ # https://github.com/webiny/action-conventional-commits
 name: Action Conventional Commits
 
 on:
@@ -15,4 +16,4 @@ jobs:
       - uses: webiny/action-conventional-commits@v1.3.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Optional, for private repositories.
-          allowed-commit-types: "feat,fix" # Optional, set if you want a subset of commit types to be allowed.
+          allowed-commit-types: "feat,fix,docs,style,refactor,perf,test,chore" # Optional, set if you want a subset of commit types to be allowed.

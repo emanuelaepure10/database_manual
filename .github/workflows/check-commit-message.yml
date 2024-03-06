@@ -1,0 +1,17 @@
+ # https://github.com/marketplace/actions/check-commit-message
+name: Check Commit Message
+
+on:
+  push:
+   branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Check commit 🧪
+        uses: adityaa30/check-commit@master
