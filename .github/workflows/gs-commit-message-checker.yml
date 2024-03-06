@@ -36,6 +36,18 @@
 # Refs: #123
 # fails
 
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# 
+# Remove timeouts which were used to mitigate the racing issue but are
+# obsolete now.
+# 
+# Reviewed-by: Z
+# Refs: #123
+# success
+
 name: 'GS Commit Message Checker'
 on:
   pull_request:
