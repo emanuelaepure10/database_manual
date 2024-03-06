@@ -18,6 +18,11 @@
 # ING-3232
 # success
 
+# TEST 4
+# feat!: send an email to the customer when a product is shipped
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3231
+# success
 
 name: Action Conventional Commits
 
