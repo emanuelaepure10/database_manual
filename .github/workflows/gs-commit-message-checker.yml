@@ -48,6 +48,12 @@
 # Refs: #123
 # success
 
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# fails - but is a success because is missig the ING-number
+
 name: 'GS Commit Message Checker'
 on:
   pull_request:

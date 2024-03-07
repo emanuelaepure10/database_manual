@@ -36,6 +36,12 @@
 # Refs: #123
 # fails
 
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# fails
+
 name: Check Commit Message
 
 on:
