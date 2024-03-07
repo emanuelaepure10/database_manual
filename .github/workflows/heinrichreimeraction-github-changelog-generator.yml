@@ -1,6 +1,7 @@
- # https://github.com/marketplace/actions/generate-changelog
+# https://github.com/marketplace/actions/generate-changelog
 
 name: 'Create Release Heinrichreimer'
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
