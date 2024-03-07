@@ -3,8 +3,9 @@
 name: 'Release Please'
 on:
   push:
-    branches:
-      - main
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'version_*' # Push events to matching version_*, i.e. v1.0, v20.15.10
 
 permissions:
   contents: write
