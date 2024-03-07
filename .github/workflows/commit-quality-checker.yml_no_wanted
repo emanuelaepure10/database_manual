@@ -43,7 +43,7 @@
 # fails
 
 
-name: Beams  Commit Message Checker
+name: Beams Commit Message Checker
 
 on:
   pull_request:
