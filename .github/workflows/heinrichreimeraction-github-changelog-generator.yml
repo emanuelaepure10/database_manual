@@ -1,0 +1,16 @@
+ # https://github.com/actions/create-release#example-workflow---create-a-release
+
+name: 'Create Release'
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'vs.*' # Push events to matching v*, i.e. v1.0, v20.15.10
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "✏️ Generate release changelog"
+        uses: heinrichreimer/action-github-changelog-generator@v2.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} 
