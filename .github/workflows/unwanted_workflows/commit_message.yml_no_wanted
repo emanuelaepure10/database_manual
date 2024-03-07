@@ -1,0 +1,79 @@
+# custom commit checker
+
+# TEST 1
+# feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 2
+# fixup! feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 3
+# docs: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 4
+# feat!: send an email to the customer when a product is shipped
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3231
+# fails
+
+# TEST 5
+# feat(api)!: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# 
+# Remove timeouts which were used to mitigate the racing issue but are
+# obsolete now.
+# 
+# Reviewed-by: Z
+# Refs: #123
+# fails
+
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# success - but I wanted it to fail
+
+name: Check Commit Message CUSTOM
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  check_commit_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Check commit message
+        run: |
+          COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
+          PATTERN_MSG='^(fixup! )?(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,100}$'
+          if [[ ! $COMMIT_MSG =~ $PATTERN_MSG ]]; then
+            echo "Invalid commit message format. Must match pattern: /^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?: .{1,100}$/"
+            exit 1
+          fi
+
+      - name: Check commit description
+        run: |
+          COMMIT_DESC=$(git log --format=%b -n 1 ${{ github.sha }})
+          PATTERN_DESC='^.{1,200}$'
+          if [[ ! $COMMIT_DESC =~ $PATTERN_DESC ]]; then
+            echo "Invalid commit description format. Must be up to 200 characters long."
+            exit 1
+          fi
