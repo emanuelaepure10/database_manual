@@ -1,0 +1,19 @@
+ # https://github.com/marketplace/actions/generate-changelog
+
+name: 'Create Release Heinrichreimer'
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'vs.*' # Push events to matching v*, i.e. v1.0, v20.15.10
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "✏️ Generate release changelog"
+        uses: heinrichreimer/action-github-changelog-generator@v2.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }} 
+          output: CHANGELOG.md
