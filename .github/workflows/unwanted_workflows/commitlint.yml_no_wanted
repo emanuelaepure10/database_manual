@@ -1,0 +1,68 @@
+ # 
+
+# TEST 1
+# feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 2
+# fixup! feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 3
+# docs: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 4
+# feat!: send an email to the customer when a product is shipped
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3231
+# fails
+
+# TEST 5
+# feat(api)!: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# 
+# Remove timeouts which were used to mitigate the racing issue but are
+# obsolete now.
+# 
+# Reviewed-by: Z
+# Refs: #123
+# fails
+
+
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# fails
+
+name: Commitlint
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install @commitlint-github-action@v5
+
+      - name: Run commitlint
+        run: npx commitlint --from=$GITHUB_SHA~1 --to=$GITHUB_SHA

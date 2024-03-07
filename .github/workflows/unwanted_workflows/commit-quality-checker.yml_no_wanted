@@ -1,0 +1,67 @@
+ # https://github.com/marketplace/actions/commit-quality-checker
+
+# TEST 1
+# feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 2
+# fixup! feat: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 3
+# docs: update action conventional commits
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3232
+# fails
+
+# TEST 4
+# feat!: send an email to the customer when a product is shipped
+# BREAKING CHANGE: `extends` key in config file is now used for extending other config files
+# ING-3231
+# fails
+
+# TEST 5
+# feat(api)!: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# 
+# Remove timeouts which were used to mitigate the racing issue but are
+# obsolete now.
+# 
+# Reviewed-by: Z
+# Refs: #123
+# fails
+
+# TEST 6
+# chore: send an email to the customer when a product is shipped
+# Introduce a request id and a reference to latest request. Dismiss
+# incoming responses other than from latest request.
+# fails
+
+
+name: Beams Commit Message Checker
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+   branches:
+      - main
+
+jobs:
+  check-commit-message:
+    runs-on: ubuntu-latest
+    name: Check commit message
+    permissions:
+      pull-requests: write # required to post pull request comments
+      contents: read # required to read commit information
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Check commit message
+        uses: actions/beams-commit-message-checker@v0.1.0
