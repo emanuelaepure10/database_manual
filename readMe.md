@@ -1,7 +1,5 @@
 # Requirements
 
-
-
 Having a Player class - an instance of this class with that can communicate with other Player(s) (other instances of this class)
 
 The use case for this task is as bellow:
@@ -22,7 +20,6 @@ Everything what is not clearly specified is to be decided by developer. Everythi
 Please focus on design and not on technology, the technology should be the simplest possible that is achieving the target.
 
 The focus of the exercise is to deliver the cleanest and clearest design that you can achieve (and the system has to be functional).
-
 
 # Classes description
 1-5 requirements
